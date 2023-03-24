@@ -5,7 +5,7 @@ import requests
 from io import BytesIO
 
 # Define the URL of the trained model on GitHub
-model_url = 'https://github.com/VipinPawar0402/Project/raw/main/v3_pred_cott_dis.h5'
+model_url = 'https://github.com/VipinPawar0402/Project/blob/main/v3_pred_cott_dis.h5'
 
 # Load the trained model from the URL
 try:
