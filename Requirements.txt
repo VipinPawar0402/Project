@@ -1,5 +1,5 @@
-Python
-TensorFlow
-Keras
-NumPy
-Flask
+python
+tensorFlow
+keras
+numpy
+flask
