@@ -1,6 +1,6 @@
 tensorFlow
 keras
-numpy
+numpy == 1.22
 flask
 requests
 h5py
