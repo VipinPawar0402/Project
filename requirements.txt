@@ -3,4 +3,4 @@ keras
 numpy
 flask
 requests
-ByteIO
+BytesIO
