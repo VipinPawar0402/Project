@@ -1,6 +1,4 @@
-tensorFlow
-keras
-numpy == 1.22
-flask
-requests
-h5py
+numpy==1.19.3
+pandas==1.2.0
+tensorflow==2.4.0
+streamlit==0.75.0
