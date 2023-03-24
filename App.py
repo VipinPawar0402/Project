@@ -1,9 +1,15 @@
 import streamlit as st
 import pandas as pd
 import tensorflow as tf
+import requests
+from io import BytesIO
 
-# Load the trained model
-model = tf.keras.models.load_model(r"C:\Users\ASUS\OneDrive\Desktop\v3_pred_cott_dis.h5")
+# Define the URL of the trained model on GitHub
+model_url = 'https://github.com/VipinPawar0402/Project/raw/main/v3_pred_cott_dis.h5'
+
+# Load the trained model from the URL
+response = requests.get(model_url)
+model = tf.keras.models.load_model(BytesIO(response.content))
 
 # Define the Streamlit app interface
 def app():
