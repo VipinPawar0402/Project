@@ -3,3 +3,4 @@ keras
 numpy
 flask
 requests
+h5py
