@@ -5,11 +5,16 @@ import requests
 from io import BytesIO
 
 # Define the URL of the trained model on GitHub
-model_url = 'https://github.com/VipinPawar0402/Project/raw/main/v3_pred_cott_dis.h5'
+model_url = 'https://github.com/<username>/<repository>/raw/main/v3_pred_cott_dis.h5'
 
 # Load the trained model from the URL
-response = requests.get(model_url)
-model = tf.keras.models.load_model(BytesIO(response.content))
+try:
+    response = requests.get(model_url)
+    response.raise_for_status()
+    model = tf.keras.models.load_model(BytesIO(response.content))
+except requests.exceptions.RequestException as e:
+    st.error(f'Error loading model from {model_url}: {e}')
+    st.stop()
 
 # Define the Streamlit app interface
 def app():
@@ -28,7 +33,11 @@ def app():
         input_data = pd.DataFrame([[temperature, humidity, ph, rainfall]], columns=['temperature', 'humidity', 'ph', 'rainfall'])
         
         # Make a prediction using the loaded model
-        prediction = model.predict(input_data)
+        try:
+            prediction = model.predict(input_data)
+        except Exception as e:
+            st.error(f'Error predicting: {e}')
+            st.stop()
         
         # Display the prediction to the user
         if prediction[0][0] == 1:
