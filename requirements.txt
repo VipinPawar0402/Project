@@ -1,5 +1,6 @@
-python
 tensorFlow
 keras
 numpy
 flask
+requests
+ByteIO
