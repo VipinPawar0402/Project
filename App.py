@@ -18,7 +18,7 @@ def preprocess_image(image):
     # Convert image to numpy array
     image = np.array(image)
     # Scale pixel values to range [0, 1]
-    image = image / 255.0
+    image = image / 150
     # Expand dimensions to create batch of size 1
     image = np.expand_dims(image, axis=0)
     return image
