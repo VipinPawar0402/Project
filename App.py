@@ -1,8 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import streamlit as st
 import numpy as np
@@ -10,7 +6,7 @@ from PIL import Image
 import tensorflow as tf
 
 # Load pre-trained model
-model = tf.keras.models.load_model('C:/Users/ASUS/OneDrive/Desktop/v3_pred_cott_dis.h5')
+model = tf.keras.models.load_model('v3_pred_cott_dis.h5')
 
 # Define labels for prediction output
 labels = ['healthy', 'diseased']
