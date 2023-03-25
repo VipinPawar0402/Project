@@ -9,7 +9,7 @@ import tensorflow as tf
 model = tf.keras.models.load_model('v3_pred_cott_dis.h5')
 
 # Define labels for prediction output
-labels = ['healthy', 'diseased']
+labels = ['diseased','healthy']
 
 # Define function to preprocess input image
 def preprocess_image(image):
